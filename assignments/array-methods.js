@@ -84,7 +84,22 @@ let ticketPriceTotal = runners.reduce((acc, cur) => acc + cur.donation, 0);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Only runners from 'Skinix' company
+let onlySkinix = runners.filter((company => company.company_name === 'Skinix'));
+console.log(onlySkinix);
 
 // Problem 2
+// People with non '.com' emails
+let noCom = runners.filter((email) => !email.email.includes('.com'));
+console.log(noCom)
 
 // Problem 3
+// People with a last name that starts with M
+let onlyM = [];
+runners.map((runner) => {
+  if (runner.last_name[0] === 'M') {
+    onlyM.push(runner);
+  }
+})
+
+console.log(onlyM);
